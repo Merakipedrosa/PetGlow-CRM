@@ -251,3 +251,110 @@
 .available-pet-card:hover .drag-handle {
     opacity: 1;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .kanban-board {
+        height: calc(100vh - 300px);
+    }
+
+    .kanban-column {
+        min-width: 260px;
+    }
+
+    .available-pets-section {
+        padding: 1.25rem;
+    }
+
+    .available-pet-card {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kanban-board {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .kanban-column {
+        min-width: 100%;
+        max-height: 400px;
+    }
+
+    .available-pets-section {
+        padding: 1rem;
+    }
+
+    .available-pets-section .section-title {
+        font-size: 1rem;
+    }
+
+    .available-pet-card {
+        min-width: 160px;
+        padding: 0.875rem;
+    }
+
+    .available-pet-photo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .delete-booking-btn {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .kanban-column {
+        max-height: 350px;
+    }
+
+    .column-header h3 {
+        font-size: 0.9rem;
+    }
+
+    .kanban-card {
+        padding: 0.875rem;
+    }
+
+    .pet-name-sm {
+        font-size: 0.875rem;
+    }
+
+    .service-tag {
+        font-size: 0.65rem;
+        padding: 0.125rem 0.4rem;
+    }
+
+    .card-task {
+        font-size: 0.8rem;
+    }
+
+    .available-pet-card {
+        min-width: 140px;
+        padding: 0.75rem;
+    }
+
+    .available-pet-info h4 {
+        font-size: 0.85rem;
+    }
+
+    .available-pet-info p {
+        font-size: 0.7rem;
+    }
+
+    .drag-handle {
+        font-size: 1rem;
+    }
+}
