@@ -41,6 +41,23 @@ function App() {
     }
   };
 
+  const getPageTitle = () => {
+    switch (activePage) {
+      case 'dashboard':
+        return 'Dashboard';
+      case 'pets':
+        return 'Pet Passport';
+      case 'hotel':
+        return 'Hotel & Daycare';
+      case 'health':
+        return 'Health Tracker';
+      case 'settings':
+        return 'Settings';
+      default:
+        return 'Dashboard';
+    }
+  };
+
   if (!session) {
     return <Login />;
   }
@@ -48,8 +65,67 @@ function App() {
   return (
     <div className="app-container">
       <Sidebar activePage={activePage} setActivePage={setActivePage} />
+
       <main className="main-content">
+        {/* Top Bar */}
+        <div className="top-bar">
+          <div className="top-bar-left">
+            <h1 className="page-title">{getPageTitle()}</h1>
+            <div className="search-bar">
+              <span className="search-icon">🔍</span>
+              <input type="text" placeholder="Search here..." />
+            </div>
+          </div>
+
+          <div className="top-bar-right">
+            <button className="notification-btn">
+              🔔
+              <span className="notification-badge">3</span>
+            </button>
+
+            <div className="user-menu">
+              <div className="avatar-sm">🐶</div>
+              <span className="user-name">Admin</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Page Content */}
         {renderContent()}
+
+        {/* Mobile Bottom Navigation */}
+        <div className="mobile-bottom-nav">
+          <div className="mobile-nav-items">
+            <button
+              className={`mobile-nav-item ${activePage === 'dashboard' ? 'active' : ''}`}
+              onClick={() => setActivePage('dashboard')}
+            >
+              <span className="icon">📊</span>
+              <span>Home</span>
+            </button>
+            <button
+              className={`mobile-nav-item ${activePage === 'pets' ? 'active' : ''}`}
+              onClick={() => setActivePage('pets')}
+            >
+              <span className="icon">🐾</span>
+              <span>Pets</span>
+            </button>
+            <button
+              className={`mobile-nav-item ${activePage === 'hotel' ? 'active' : ''}`}
+              onClick={() => setActivePage('hotel')}
+            >
+              <span className="icon">🏨</span>
+              <span>Hotel</span>
+            </button>
+            <button
+              className={`mobile-nav-item ${activePage === 'health' ? 'active' : ''}`}
+              onClick={() => setActivePage('health')}
+            >
+              <span className="icon">🩺</span>
+              <span>Health</span>
+            </button>
+          </div>
+        </div>
       </main>
     </div>
   );

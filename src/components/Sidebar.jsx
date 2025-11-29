@@ -35,9 +35,12 @@ const Sidebar = ({ activePage, setActivePage }) => {
       />
 
       {/* Sidebar */}
-      <aside className={`sidebar glass-panel ${isMobileOpen ? 'mobile-open' : ''}`}>
+      <aside className={`sidebar ${isMobileOpen ? 'mobile-open' : ''}`}>
         <div className="logo-container">
-          <h1 className="logo text-gradient">PetGlow</h1>
+          <h1 className="logo">
+            <span className="logo-icon">🐾</span>
+            PetGlow
+          </h1>
         </div>
 
         <nav className="nav-menu">
