@@ -5,11 +5,11 @@ const Sidebar = ({ activePage, setActivePage }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const menuItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
-    { id: 'pets', label: 'Pet Passport', icon: 'pets' },
-    { id: 'hotel', label: 'Hotel & Daycare', icon: 'hotel' },
-    { id: 'health', label: 'Health Tracker', icon: 'favorite' },
-    { id: 'settings', label: 'Settings', icon: 'settings' },
+    { id: 'dashboard', label: 'Painel', icon: 'dashboard' },
+    { id: 'pets', label: 'Passaporte Pet', icon: 'pets' },
+    { id: 'hotel', label: 'Hotel & Creche', icon: 'hotel' },
+    { id: 'health', label: 'Saúde', icon: 'favorite' },
+    { id: 'settings', label: 'Configurações', icon: 'settings' },
   ];
 
   const handleMenuClick = (pageId) => {
@@ -63,7 +63,7 @@ const Sidebar = ({ activePage, setActivePage }) => {
         <div className="user-profile">
           <button className="sign-out-btn">
             <span className="material-icons">logout</span>
-            <span>Sign Out</span>
+            <span>Sair</span>
           </button>
         </div>
       </aside>

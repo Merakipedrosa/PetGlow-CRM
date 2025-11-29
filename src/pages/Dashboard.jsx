@@ -76,7 +76,7 @@ const Dashboard = () => {
     if (loading) {
         return (
             <div className="page-content flex-center">
-                <div className="text-xl">Loading Dashboard... 📊</div>
+                <div className="text-xl">Carregando Painel... 📊</div>
             </div>
         );
     }
@@ -92,10 +92,10 @@ const Dashboard = () => {
                         </div>
                         <div className="stat-content">
                             <p className="stat-value">{stats.totalPets}</p>
-                            <p className="stat-label">Total Pets</p>
+                            <p className="stat-label">Total de Pets</p>
                         </div>
                     </div>
-                    <p className="stat-trend positive">+{stats.activePets} available</p>
+                    <p className="stat-trend positive">+{stats.activePets} disponíveis</p>
                 </div>
 
                 <div className="stat-card">
@@ -105,10 +105,10 @@ const Dashboard = () => {
                         </div>
                         <div className="stat-content">
                             <p className="stat-value">{stats.todayBookings}</p>
-                            <p className="stat-label">New Bookings</p>
+                            <p className="stat-label">Novas Reservas</p>
                         </div>
                     </div>
-                    <p className="stat-trend positive">+{stats.todayBookings} today</p>
+                    <p className="stat-trend positive">+{stats.todayBookings} hoje</p>
                 </div>
 
                 <div className="stat-card">
@@ -121,7 +121,7 @@ const Dashboard = () => {
                             <p className="stat-label">Check-ins</p>
                         </div>
                     </div>
-                    <p className="stat-trend positive">Currently active</p>
+                    <p className="stat-trend positive">Atualmente ativos</p>
                 </div>
 
                 <div className="stat-card">
@@ -131,19 +131,19 @@ const Dashboard = () => {
                         </div>
                         <div className="stat-content">
                             <p className="stat-value">{stats.totalBookings}</p>
-                            <p className="stat-label">Total Bookings</p>
+                            <p className="stat-label">Total de Reservas</p>
                         </div>
                     </div>
-                    <p className="stat-trend positive">All time</p>
+                    <p className="stat-trend positive">Todos os tempos</p>
                 </div>
             </div>
 
             {/* Recent Pets Section */}
             <div className="dashboard-section">
-                <h3 className="section-title">Recent Pets</h3>
+                <h3 className="section-title">Pets Recentes</h3>
                 <div className="recent-pets-list">
                     {recentPets.length === 0 ? (
-                        <p className="empty-message">No pets registered yet. Add your first pet! 🐶</p>
+                        <p className="empty-message">Nenhum pet cadastrado ainda. Adicione seu primeiro pet! 🐶</p>
                     ) : (
                         recentPets.map((pet) => (
                             <div key={pet.id} className="recent-pet-item">
@@ -157,7 +157,7 @@ const Dashboard = () => {
                                     <p>{pet.breed}</p>
                                 </div>
                                 <span className={`status-badge ${pet.realStatus === 'Active' ? 'active' : ''}`}>
-                                    {pet.realStatus}
+                                    {pet.realStatus === 'Active' ? 'Ativo' : 'Check-in'}
                                 </span>
                             </div>
                         ))

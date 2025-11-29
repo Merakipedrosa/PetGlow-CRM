@@ -44,17 +44,17 @@ function App() {
   const getPageTitle = () => {
     switch (activePage) {
       case 'dashboard':
-        return 'Dashboard';
+        return 'Painel';
       case 'pets':
-        return 'Pet Passport';
+        return 'Passaporte Pet';
       case 'hotel':
-        return 'Hotel & Daycare';
+        return 'Hotel & Creche';
       case 'health':
-        return 'Health Tracker';
+        return 'Saúde';
       case 'settings':
-        return 'Settings';
+        return 'Configurações';
       default:
-        return 'Dashboard';
+        return 'Painel';
     }
   };
 
@@ -76,7 +76,7 @@ function App() {
           <div className="header-right">
             <div className="search-bar">
               <span className="material-icons">search</span>
-              <input type="text" placeholder="Search here..." />
+              <input type="text" placeholder="Buscar..." />
             </div>
 
             <div className="language-selector">
@@ -119,7 +119,7 @@ function App() {
               onClick={() => setActivePage('dashboard')}
             >
               <span className="material-icons">dashboard</span>
-              <span>Home</span>
+              <span>Início</span>
             </button>
             <button
               className={`mobile-nav-item ${activePage === 'pets' ? 'active' : ''}`}
@@ -140,7 +140,7 @@ function App() {
               onClick={() => setActivePage('health')}
             >
               <span className="material-icons">favorite</span>
-              <span>Health</span>
+              <span>Saúde</span>
             </button>
           </div>
         </div>
