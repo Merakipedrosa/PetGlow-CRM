@@ -83,40 +83,62 @@ const Dashboard = () => {
 
     return (
         <div className="page-content">
+            {/* Stats Grid */}
             <div className="stats-grid">
-                <div className="stat-card pink">
-                    <div className="stat-icon">🐾</div>
-                    <h3>Total Pets</h3>
-                    <p className="stat-value">{stats.totalPets}</p>
-                    <span className="stat-trend positive">
-                        +{stats.activePets} Available
-                    </span>
+                <div className="stat-card">
+                    <div className="stat-card-header">
+                        <div className="stat-icon-box rose">
+                            <span className="material-icons">group</span>
+                        </div>
+                        <div className="stat-content">
+                            <p className="stat-value">{stats.totalPets}</p>
+                            <p className="stat-label">Total Pets</p>
+                        </div>
+                    </div>
+                    <p className="stat-trend positive">+{stats.activePets} available</p>
                 </div>
 
-                <div className="stat-card orange">
-                    <div className="stat-icon">📦</div>
-                    <h3>Total Bookings</h3>
-                    <p className="stat-value">{stats.totalBookings}</p>
-                    <span className="stat-trend neutral">
-                        {stats.todayBookings} Today
-                    </span>
+                <div className="stat-card">
+                    <div className="stat-card-header">
+                        <div className="stat-icon-box amber">
+                            <span className="material-icons">event</span>
+                        </div>
+                        <div className="stat-content">
+                            <p className="stat-value">{stats.todayBookings}</p>
+                            <p className="stat-label">New Bookings</p>
+                        </div>
+                    </div>
+                    <p className="stat-trend positive">+{stats.todayBookings} today</p>
                 </div>
 
-                <div className="stat-card green">
-                    <div className="stat-icon">✅</div>
-                    <h3>Check-ins</h3>
-                    <p className="stat-value">{stats.checkedInPets}</p>
-                    <span className="stat-trend positive">Currently</span>
+                <div className="stat-card">
+                    <div className="stat-card-header">
+                        <div className="stat-icon-box emerald">
+                            <span className="material-icons">hotel</span>
+                        </div>
+                        <div className="stat-content">
+                            <p className="stat-value">{stats.checkedInPets}</p>
+                            <p className="stat-label">Check-ins</p>
+                        </div>
+                    </div>
+                    <p className="stat-trend positive">Currently active</p>
                 </div>
 
-                <div className="stat-card purple">
-                    <div className="stat-icon">👥</div>
-                    <h3>Active Pets</h3>
-                    <p className="stat-value">{stats.activePets}</p>
-                    <span className="stat-trend neutral">Ready to book</span>
+                <div className="stat-card">
+                    <div className="stat-card-header">
+                        <div className="stat-icon-box indigo">
+                            <span className="material-icons">paid</span>
+                        </div>
+                        <div className="stat-content">
+                            <p className="stat-value">{stats.totalBookings}</p>
+                            <p className="stat-label">Total Bookings</p>
+                        </div>
+                    </div>
+                    <p className="stat-trend positive">All time</p>
                 </div>
             </div>
 
+            {/* Recent Pets Section */}
             <div className="dashboard-section">
                 <h3 className="section-title">Recent Pets</h3>
                 <div className="recent-pets-list">

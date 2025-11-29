@@ -5,16 +5,16 @@ const Sidebar = ({ activePage, setActivePage }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const menuItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: '📊' },
-    { id: 'pets', label: 'Pet Passport', icon: '🐾' },
-    { id: 'hotel', label: 'Hotel & Daycare', icon: '🏨' },
-    { id: 'health', label: 'Health Tracker', icon: '🩺' },
-    { id: 'settings', label: 'Settings', icon: '⚙️' },
+    { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
+    { id: 'pets', label: 'Pet Passport', icon: 'pets' },
+    { id: 'hotel', label: 'Hotel & Daycare', icon: 'hotel' },
+    { id: 'health', label: 'Health Tracker', icon: 'favorite' },
+    { id: 'settings', label: 'Settings', icon: 'settings' },
   ];
 
   const handleMenuClick = (pageId) => {
     setActivePage(pageId);
-    setIsMobileOpen(false); // Close mobile menu after selection
+    setIsMobileOpen(false);
   };
 
   const toggleMobileMenu = () => {
@@ -25,7 +25,7 @@ const Sidebar = ({ activePage, setActivePage }) => {
     <>
       {/* Mobile Menu Toggle Button */}
       <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-        {isMobileOpen ? '✕' : '☰'}
+        <span className="material-icons">{isMobileOpen ? 'close' : 'menu'}</span>
       </button>
 
       {/* Sidebar Overlay for Mobile */}
@@ -36,32 +36,35 @@ const Sidebar = ({ activePage, setActivePage }) => {
 
       {/* Sidebar */}
       <aside className={`sidebar ${isMobileOpen ? 'mobile-open' : ''}`}>
-        <div className="logo-container">
-          <h1 className="logo">
-            <span className="logo-icon">🐾</span>
-            PetGlow
-          </h1>
+        <div>
+          <div className="logo-container">
+            <div className="logo">
+              <div className="logo-icon">
+                <span className="material-icons">pets</span>
+              </div>
+              <h1 className="logo-text">PetGlow</h1>
+            </div>
+          </div>
+
+          <nav className="nav-menu">
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                className={`nav-item ${activePage === item.id ? 'active' : ''}`}
+                onClick={() => handleMenuClick(item.id)}
+              >
+                <span className="material-icons">{item.icon}</span>
+                <span>{item.label}</span>
+              </button>
+            ))}
+          </nav>
         </div>
 
-        <nav className="nav-menu">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              className={`nav-item ${activePage === item.id ? 'active' : ''}`}
-              onClick={() => handleMenuClick(item.id)}
-            >
-              <span className="icon">{item.icon}</span>
-              <span className="label">{item.label}</span>
-            </button>
-          ))}
-        </nav>
-
         <div className="user-profile">
-          <div className="avatar">🐶</div>
-          <div className="user-info">
-            <p className="name">Admin User</p>
-            <p className="role">Manager</p>
-          </div>
+          <button className="sign-out-btn">
+            <span className="material-icons">logout</span>
+            <span>Sign Out</span>
+          </button>
         </div>
       </aside>
     </>

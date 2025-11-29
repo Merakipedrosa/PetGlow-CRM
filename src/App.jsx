@@ -67,28 +67,46 @@ function App() {
       <Sidebar activePage={activePage} setActivePage={setActivePage} />
 
       <main className="main-content">
-        {/* Top Bar */}
-        <div className="top-bar">
-          <div className="top-bar-left">
-            <h1 className="page-title">{getPageTitle()}</h1>
-            <div className="search-bar">
-              <span className="search-icon">🔍</span>
-              <input type="text" placeholder="Search here..." />
-            </div>
+        {/* Header */}
+        <header className="top-header">
+          <div className="header-left">
+            <h2>{getPageTitle()}</h2>
           </div>
 
-          <div className="top-bar-right">
+          <div className="header-right">
+            <div className="search-bar">
+              <span className="material-icons">search</span>
+              <input type="text" placeholder="Search here..." />
+            </div>
+
+            <div className="language-selector">
+              <img
+                src="https://flagcdn.com/w40/us.png"
+                alt="US flag"
+              />
+              <span>Eng (US)</span>
+              <span className="material-icons" style={{ fontSize: '16px' }}>expand_more</span>
+            </div>
+
             <button className="notification-btn">
-              🔔
-              <span className="notification-badge">3</span>
+              <span className="material-icons">notifications</span>
+              <span className="notification-badge"></span>
             </button>
 
             <div className="user-menu">
-              <div className="avatar-sm">🐶</div>
-              <span className="user-name">Admin</span>
+              <img
+                src="https://ui-avatars.com/api/?name=Admin&background=6366F1&color=fff"
+                alt="User avatar"
+                className="user-avatar"
+              />
+              <div className="user-info-header">
+                <p className="user-name">Admin</p>
+                <p className="user-role">Manager</p>
+              </div>
+              <span className="material-icons" style={{ fontSize: '16px', color: 'var(--text-secondary)' }}>expand_more</span>
             </div>
           </div>
-        </div>
+        </header>
 
         {/* Page Content */}
         {renderContent()}
@@ -100,28 +118,28 @@ function App() {
               className={`mobile-nav-item ${activePage === 'dashboard' ? 'active' : ''}`}
               onClick={() => setActivePage('dashboard')}
             >
-              <span className="icon">📊</span>
+              <span className="material-icons">dashboard</span>
               <span>Home</span>
             </button>
             <button
               className={`mobile-nav-item ${activePage === 'pets' ? 'active' : ''}`}
               onClick={() => setActivePage('pets')}
             >
-              <span className="icon">🐾</span>
+              <span className="material-icons">pets</span>
               <span>Pets</span>
             </button>
             <button
               className={`mobile-nav-item ${activePage === 'hotel' ? 'active' : ''}`}
               onClick={() => setActivePage('hotel')}
             >
-              <span className="icon">🏨</span>
+              <span className="material-icons">hotel</span>
               <span>Hotel</span>
             </button>
             <button
               className={`mobile-nav-item ${activePage === 'health' ? 'active' : ''}`}
               onClick={() => setActivePage('health')}
             >
-              <span className="icon">🩺</span>
+              <span className="material-icons">favorite</span>
               <span>Health</span>
             </button>
           </div>
