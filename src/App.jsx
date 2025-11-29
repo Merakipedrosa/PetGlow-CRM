@@ -81,10 +81,10 @@ function App() {
 
             <div className="language-selector">
               <img
-                src="https://flagcdn.com/w40/us.png"
-                alt="US flag"
+                src="https://flagcdn.com/w40/br.png"
+                alt="Bandeira do Brasil"
               />
-              <span>Eng (US)</span>
+              <span>Português (BR)</span>
               <span className="material-icons" style={{ fontSize: '16px' }}>expand_more</span>
             </div>
 
