@@ -78,7 +78,7 @@ const PetPassport = () => {
   if (loading) {
     return (
       <div className="page-content flex-center">
-        <div className="text-xl">Loading Passports... 🐾</div>
+        <div className="text-xl">Carregando Passaportes... 🐾</div>
       </div>
     );
   }
@@ -87,11 +87,11 @@ const PetPassport = () => {
     <div className="page-content">
       <header className="page-header">
         <div>
-          <h2 className="text-2xl font-bold">Pet Passport 🐾</h2>
-          <p className="text-secondary">Digital Identity & Records</p>
+          <h2 className="text-2xl font-bold">Passaporte Pet 🐾</h2>
+          <p className="text-secondary">Identidade Digital & Registros</p>
         </div>
         <button className="btn-primary" onClick={() => setIsModalOpen(true)}>
-          + Register New Pet
+          + Registrar Novo Pet
         </button>
       </header>
 
@@ -117,7 +117,7 @@ const PetPassport = () => {
 
             <div className="stats-container">
               <div className="stat-row">
-                <span>Cuteness Level</span>
+                <span>Nível de Fofura</span>
                 <div className="progress-bar">
                   <div className="progress-fill" style={{ width: `${pet.cuteness_level}%` }}></div>
                 </div>
@@ -130,15 +130,15 @@ const PetPassport = () => {
               ))}
             </div>
 
-            <button className="view-profile-btn">View Full Passport</button>
+            <button className="view-profile-btn">Ver Passaporte Completo</button>
           </div>
         ))}
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Register New Pet">
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Registrar Novo Pet">
         <form onSubmit={handleAddPet} className="pet-form">
           <div className="form-group">
-            <label>Pet Name *</label>
+            <label>Nome do Pet *</label>
             <input
               type="text"
               placeholder="Luna"
@@ -149,7 +149,7 @@ const PetPassport = () => {
           </div>
 
           <div className="form-group">
-            <label>Breed *</label>
+            <label>Raça *</label>
             <input
               type="text"
               placeholder="Golden Retriever"
@@ -160,10 +160,10 @@ const PetPassport = () => {
           </div>
 
           <div className="form-group">
-            <label>Age *</label>
+            <label>Idade *</label>
             <input
               type="text"
-              placeholder="2 yrs"
+              placeholder="2 anos"
               value={formData.age}
               onChange={(e) => setFormData({ ...formData, age: e.target.value })}
               required
@@ -171,7 +171,7 @@ const PetPassport = () => {
           </div>
 
           <div className="form-group">
-            <label>Photo URL (optional)</label>
+            <label>URL da Foto (opcional)</label>
             <input
               type="url"
               placeholder="https://..."
@@ -181,7 +181,7 @@ const PetPassport = () => {
           </div>
 
           <div className="form-group">
-            <label>Cuteness Level: {formData.cuteness_level}%</label>
+            <label>Nível de Fofura: {formData.cuteness_level}%</label>
             <input
               type="range"
               min="0"
@@ -193,7 +193,7 @@ const PetPassport = () => {
           </div>
 
           <button type="submit" className="btn-primary btn-block">
-            🐾 Register Pet
+            🐾 Registrar Pet
           </button>
         </form>
       </Modal>

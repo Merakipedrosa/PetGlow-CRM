@@ -117,7 +117,7 @@ const Health = () => {
     if (loading) {
         return (
             <div className="page-content flex-center">
-                <div className="text-xl">Loading Health Records... 🏥</div>
+                <div className="text-xl">Carregando Registros de Saúde... 🏥</div>
             </div>
         );
     }
@@ -126,18 +126,18 @@ const Health = () => {
         <div className="page-content">
             <header className="page-header">
                 <div>
-                    <h2 className="text-2xl font-bold">Health Tracker 🏥</h2>
-                    <p className="text-secondary">Monitor vaccinations, checkups & medications</p>
+                    <h2 className="text-2xl font-bold">Saúde 🏥</h2>
+                    <p className="text-secondary">Monitore vacinas, checkups & medicamentos</p>
                 </div>
                 <button className="btn-primary" onClick={() => setIsModalOpen(true)}>
-                    + Add Health Record
+                    + Adicionar Registro
                 </button>
             </header>
 
             <div className="health-container">
                 {/* Pet Selector */}
                 <div className="pet-selector glass-panel">
-                    <h3 className="selector-title">Select Pet</h3>
+                    <h3 className="selector-title">Selecionar Pet</h3>
                     <div className="pet-list">
                         {pets.map((pet) => (
                             <div
@@ -175,7 +175,7 @@ const Health = () => {
                             <div className="health-stats">
                                 <div className="stat-box">
                                     <span className="stat-number">{healthRecords.length}</span>
-                                    <span className="stat-label">Records</span>
+                                    <span className="stat-label">Registros</span>
                                 </div>
                             </div>
                         </div>
@@ -185,8 +185,8 @@ const Health = () => {
                         {healthRecords.length === 0 ? (
                             <div className="empty-state glass-panel">
                                 <div className="empty-icon">🏥</div>
-                                <h3>No Health Records</h3>
-                                <p>Add the first health record for {selectedPet?.name}</p>
+                                <h3>Nenhum Registro de Saúde</h3>
+                                <p>Adicione o primeiro registro para {selectedPet?.name}</p>
                             </div>
                         ) : (
                             healthRecords.map((record) => (
@@ -205,7 +205,7 @@ const Health = () => {
                                         )}
                                         {record.next_date && (
                                             <p className="record-next">
-                                                🔔 Next: {new Date(record.next_date).toLocaleDateString('pt-BR')}
+                                                🔔 Próximo: {new Date(record.next_date).toLocaleDateString('pt-BR')}
                                             </p>
                                         )}
                                     </div>
@@ -217,27 +217,27 @@ const Health = () => {
             </div>
 
             {/* Add Record Modal */}
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Add Health Record">
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Adicionar Registro de Saúde">
                 <form onSubmit={handleAddRecord} className="health-form">
                     <div className="form-group">
-                        <label>Type *</label>
+                        <label>Tipo *</label>
                         <select
                             value={formData.type}
                             onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                             required
                         >
-                            <option value="vaccine">💉 Vaccine</option>
+                            <option value="vaccine">💉 Vacina</option>
                             <option value="checkup">🩺 Checkup</option>
-                            <option value="medication">💊 Medication</option>
-                            <option value="surgery">🏥 Surgery</option>
+                            <option value="medication">💊 Medicamento</option>
+                            <option value="surgery">🏥 Cirurgia</option>
                         </select>
                     </div>
 
                     <div className="form-group">
-                        <label>Title *</label>
+                        <label>Título *</label>
                         <input
                             type="text"
-                            placeholder="e.g., Rabies Vaccine"
+                            placeholder="ex: Vacina da Raiva"
                             value={formData.title}
                             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                             required
@@ -245,7 +245,7 @@ const Health = () => {
                     </div>
 
                     <div className="form-group">
-                        <label>Date *</label>
+                        <label>Data *</label>
                         <input
                             type="date"
                             value={formData.date}
@@ -255,7 +255,7 @@ const Health = () => {
                     </div>
 
                     <div className="form-group">
-                        <label>Next Date (optional)</label>
+                        <label>Próxima Data (opcional)</label>
                         <input
                             type="date"
                             value={formData.next_date}
@@ -264,9 +264,9 @@ const Health = () => {
                     </div>
 
                     <div className="form-group">
-                        <label>Notes (optional)</label>
+                        <label>Notas (opcional)</label>
                         <textarea
-                            placeholder="Additional information..."
+                            placeholder="Informações adicionais..."
                             value={formData.notes}
                             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                             rows="3"
@@ -274,7 +274,7 @@ const Health = () => {
                     </div>
 
                     <button type="submit" className="btn-primary btn-block">
-                        💾 Save Record
+                        💾 Salvar Registro
                     </button>
                 </form>
             </Modal>

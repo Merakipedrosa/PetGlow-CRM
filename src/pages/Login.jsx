@@ -113,7 +113,7 @@ const Login = () => {
                     </div>
 
                     <div className="form-group">
-                        <label>Password</label>
+                        <label>Senha</label>
                         <input
                             type="password"
                             placeholder="••••••••"
@@ -126,18 +126,18 @@ const Login = () => {
                     {message && <div className="auth-message">{message}</div>}
 
                     <button type="submit" className="btn-primary btn-block" disabled={loading}>
-                        {loading ? 'Loading...' : isSignUp ? 'Create Account' : 'Sign In'}
+                        {loading ? 'Carregando...' : isSignUp ? 'Criar Conta' : 'Entrar'}
                     </button>
                 </form>
 
                 <div className="login-footer">
                     <p>
-                        {isSignUp ? 'Already have an account?' : "Don't have an account?"}
+                        {isSignUp ? 'Já tem uma conta?' : "Não tem uma conta?"}
                         <button
                             className="link-btn"
                             onClick={() => setIsSignUp(!isSignUp)}
                         >
-                            {isSignUp ? 'Sign In' : 'Sign Up'}
+                            {isSignUp ? 'Entrar' : 'Cadastrar'}
                         </button>
                     </p>
                 </div>

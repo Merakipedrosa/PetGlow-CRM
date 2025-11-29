@@ -4,10 +4,10 @@ import './HotelDaycare.css';
 
 const initialColumns = {
     checkIn: { id: 'checkIn', title: 'Check-In 🏨', items: [] },
-    playtime: { id: 'playtime', title: 'Playtime 🎾', items: [] },
-    napTime: { id: 'napTime', title: 'Nap Time 😴', items: [] },
-    grooming: { id: 'grooming', title: 'Spa & Grooming 🛁', items: [] },
-    ready: { id: 'ready', title: 'Ready for Pickup 🏠', items: [] }
+    playtime: { id: 'playtime', title: 'Brincadeira 🎾', items: [] },
+    napTime: { id: 'napTime', title: 'Soneca 😴', items: [] },
+    grooming: { id: 'grooming', title: 'Spa & Banho 🛁', items: [] },
+    ready: { id: 'ready', title: 'Pronto para Buscar 🏠', items: [] }
 };
 
 const HotelDaycare = () => {
@@ -162,7 +162,7 @@ const HotelDaycare = () => {
     if (loading) {
         return (
             <div className="page-content flex-center">
-                <div className="text-xl">Loading Board... 🏨</div>
+                <div className="text-xl">Carregando... 🏨</div>
             </div>
         );
     }
@@ -171,22 +171,22 @@ const HotelDaycare = () => {
         <div className="page-content">
             <header className="page-header">
                 <div>
-                    <h2 className="text-2xl font-bold">Hotel & Daycare 🏨</h2>
-                    <p className="text-secondary">Drag pets to columns to create bookings</p>
+                    <h2 className="text-2xl font-bold">Hotel & Creche 🏨</h2>
+                    <p className="text-secondary">Arraste os pets para as colunas para criar reservas</p>
                 </div>
                 <div className="header-actions">
-                    <button className="btn-secondary" onClick={fetchData}>🔄 Refresh</button>
+                    <button className="btn-secondary" onClick={fetchData}>🔄 Atualizar</button>
                 </div>
             </header>
 
-            <div className="available-pets-section glass-panel">
+            <div className="available-pets-section card">
                 <h3 className="section-title">
-                    <span>🐾 Available Pets</span>
+                    <span>🐾 Pets Disponíveis</span>
                     <span className="count-badge">{availablePets.length}</span>
                 </h3>
                 <div className="available-pets-list">
                     {availablePets.length === 0 ? (
-                        <p className="empty-message">All pets are currently booked! 🎉</p>
+                        <p className="empty-message">Todos os pets estão reservados! 🎉</p>
                     ) : (
                         availablePets.map((pet) => (
                             <div
@@ -250,7 +250,7 @@ const HotelDaycare = () => {
                                 </div>
                             ))}
                             {column.items.length === 0 && (
-                                <div className="empty-state">Drop pets here</div>
+                                <div className="empty-state">Solte os pets aqui</div>
                             )}
                         </div>
                     </div>
