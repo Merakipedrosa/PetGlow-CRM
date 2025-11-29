@@ -10,12 +10,14 @@
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    background: rgba(30, 41, 59, 0.4);
+    background: #F1F5F9;
+    /* slate-100 */
+    border-radius: 12px;
 }
 
 .column-header {
     padding: 1rem;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,11 +30,12 @@
 }
 
 .count-badge {
-    background: var(--surface-hover);
+    background: white;
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
     font-size: 0.8rem;
     color: var(--text-secondary);
+    border: 1px solid var(--border);
 }
 
 .column-content {
@@ -45,10 +48,10 @@
 }
 
 .kanban-card {
-    background: var(--surface-color);
+    background: #FFFFFF;
     padding: 1rem;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     cursor: grab;
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
@@ -85,8 +88,8 @@
 
 .kanban-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
 }
 
 .kanban-card:active {
@@ -103,6 +106,7 @@
 .pet-name-sm {
     font-weight: 600;
     font-size: 0.95rem;
+    color: var(--text-primary);
 }
 
 .service-tag {
@@ -138,7 +142,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--surface-hover);
+    background: #F1F5F9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,24 +163,13 @@
     gap: 1rem;
 }
 
-.btn-secondary {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.2s;
-}
-
-.btn-secondary:hover {
-    background: var(--surface-hover);
-}
-
 /* Available Pets Section */
 .available-pets-section {
     margin-bottom: 2rem;
     padding: 1.5rem;
+    background: #FFFFFF;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
 }
 
 .available-pets-section .section-title {
@@ -186,6 +179,7 @@
     margin-bottom: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .available-pets-list {
@@ -201,8 +195,8 @@
     align-items: center;
     gap: 0.75rem;
     padding: 1rem;
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
+    background: #FFFFFF;
+    border: 1px solid var(--border);
     border-radius: 12px;
     cursor: grab;
     transition: all 0.2s;
@@ -214,8 +208,8 @@
 
 .available-pet-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
 }
 
 .available-pet-photo {
@@ -223,7 +217,7 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--primary);
 }
 
 .available-pet-info {
@@ -303,11 +297,6 @@
 
     .header-actions {
         flex-wrap: wrap;
-    }
-
-    .btn-secondary {
-        padding: 0.625rem 1.25rem;
-        font-size: 0.9rem;
     }
 
     .delete-booking-btn {
