@@ -30,6 +30,9 @@
     overflow-y: auto;
     padding: 2rem;
     animation: slideUp 0.3s ease;
+    background: #FFFFFF;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes slideUp {
@@ -50,7 +53,7 @@
     align-items: center;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border);
 }
 
 .modal-header h2 {
@@ -70,10 +73,12 @@
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
+    border: none;
+    cursor: pointer;
 }
 
 .modal-close:hover {
-    background: var(--surface-hover);
+    background: var(--bg-light);
     color: var(--text-primary);
 }
 

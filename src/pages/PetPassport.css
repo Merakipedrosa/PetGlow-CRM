@@ -12,12 +12,15 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid var(--border);
 }
 
 .passport-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
 }
 
 .passport-header {
@@ -33,12 +36,13 @@
 .status-badge {
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: #F1F5F9;
     font-weight: 600;
+    color: var(--text-secondary);
 }
 
 .status-badge.active {
-    background: rgba(16, 185, 129, 0.2);
+    background: rgba(16, 185, 129, 0.1);
     color: #10b981;
     border: 1px solid rgba(16, 185, 129, 0.3);
 }
@@ -55,9 +59,10 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--surface-color);
+    border: 4px solid #FFFFFF;
     position: relative;
     z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .photo-ring {
@@ -67,7 +72,7 @@
     right: -5px;
     bottom: -5px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     z-index: 1;
     opacity: 0.7;
 }
@@ -108,14 +113,14 @@
 .progress-bar {
     width: 100%;
     height: 6px;
-    background: var(--surface-hover);
+    background: #F1F5F9;
     border-radius: 3px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     border-radius: 3px;
 }
 
@@ -130,17 +135,17 @@
 .pet-badge {
     font-size: 0.75rem;
     padding: 0.25rem 0.75rem;
-    background: var(--surface-hover);
+    background: #F1F5F9;
     border-radius: 12px;
     color: var(--text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
 }
 
 .view-profile-btn {
     width: 100%;
     padding: 0.75rem;
     background: transparent;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     border-radius: 12px;
     color: var(--text-primary);
     font-weight: 600;
@@ -148,8 +153,8 @@
 }
 
 .view-profile-btn:hover {
-    background: var(--surface-hover);
-    border-color: var(--primary-color);
+    background: #F8FAFC;
+    border-color: var(--primary);
 }
 
 /* Pet Form Styles */
@@ -174,8 +179,8 @@
 .pet-form input {
     padding: 0.75rem 1rem;
     border-radius: 10px;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid var(--border-color);
+    background: #FFFFFF;
+    border: 1px solid var(--border);
     color: var(--text-primary);
     font-family: inherit;
     transition: all 0.2s;
@@ -183,15 +188,15 @@
 
 .pet-form input:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .slider {
     -webkit-appearance: none;
     appearance: none;
     height: 6px;
-    background: var(--surface-hover);
+    background: #F1F5F9;
     border-radius: 3px;
     outline: none;
     padding: 0 !important;
@@ -202,7 +207,7 @@
     appearance: none;
     width: 18px;
     height: 18px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     cursor: pointer;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -211,7 +216,7 @@
 .slider::-moz-range-thumb {
     width: 18px;
     height: 18px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     cursor: pointer;
     border-radius: 50%;
     border: none;
